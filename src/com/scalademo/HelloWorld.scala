@@ -14,7 +14,9 @@ object HelloWorld {
 
   def arr(): Unit = {
     val arr = Array("a", "b", "c")
+    /*arr.flatMap(_ => (_,1){
 
+    })*/
     arr.iterator.foreach(obj => {
       print(obj + "  ")
     })
@@ -32,8 +34,8 @@ object HelloWorld {
 
   def main(args: Array[String]): Unit = {
     test()
-    arr()
-    multi()
+    //arr()
+    //multi()
     var helloWorld = new HelloWorld()
     helloWorld.test1()
     println("Hello World!")
