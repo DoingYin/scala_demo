@@ -84,7 +84,6 @@ object map_demo {
     for ((name, age) <- nameAge) {
       println(name + "->" + age)
     }
-
   }
 
   def main(args: Array[String]): Unit = {
