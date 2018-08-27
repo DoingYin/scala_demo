@@ -15,7 +15,7 @@ class Student(var no:Int, name: String) extends Person(name:String) {
 
 object testExetend {
   def main(args: Array[String]): Unit = {
-    val p:Person = new Student
+    val p:Person = new Student(1, "ack")
     var s:Student = null
     if (p.isInstanceOf[Student]) {
       s = p.asInstanceOf[Student]
