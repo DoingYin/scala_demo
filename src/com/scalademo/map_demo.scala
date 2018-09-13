@@ -88,7 +88,40 @@ object map_demo {
 
   def main(args: Array[String]): Unit = {
     //MapTest()
-    TupleTest()
-    println(1)
+    //TupleTest()
+    //println(1)
+
+    //Map一对一映射操作
+    val scoreMap = Map("jack" -> 90, "walloce" -> 80, "sum" ->60)
+    val names = List("jack", "walloce", "sum")
+    val result = names.map(scoreMap(_))
+
+    //flatMap操作，一对多映射
+    val flatscoreMap = Map("jack" -> List(90, 78, 75), "walloce" -> List(86, 64, 97), "sum" -> List(60, 55, 78))
+    println(names.map(flatscoreMap(_)))
+    println(names.flatMap(flatscoreMap(_)))
+
+    //collect操作，结合偏函数使用
+    val re = "abc".collect{
+      case 'a' => 1
+      case 'b' => 3
+      case 'c' => 5
+    }
+    println(re)
+
+    //reduce操作,reduceRight:(1-(2-(3-(4-5))))
+    val list = List(1, 2, 3, 4, 5)
+    var re1 = list.reduceLeft(_ + _)
+    re1 = list.reduceLeft(_ - _)
+    re1 = list.reduceRight(_ - _)
+    println(re1)
+    println((1-(2-(3-(4-5)))))
+
+    //fold操作
+    //初始值为20，从右边开始减：(1-(2-(3-(4-(5-20)))))
+    var re2 = list.foldRight(20)(_ - _)
+    re2 = list.foldLeft(20)(_ - _)
+    println(re2)
+    println((1-(2-(3-(4-(5-20))))))
   }
 }

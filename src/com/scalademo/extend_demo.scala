@@ -3,7 +3,6 @@ package com.scalademo
 object extend_demo {
 
 }
-
 class Person (var name:String) {
   private var age = 18
 }
@@ -21,11 +20,11 @@ object testExetend {
       s = p.asInstanceOf[Student]
     }
 
-   /* val s1:Student = new Person
-    var p1:Person = null
-    if (s1.isInstanceOf[Person]) {
-      p1 = s1.asInstanceOf[Student]
-    }*/
+    /* val s1:Student = new Person
+     var p1:Person = null
+     if (s1.isInstanceOf[Person]) {
+       p1 = s1.asInstanceOf[Student]
+     }*/
 
     println(p.getClass == classOf[Person])
     println(s.getClass == classOf[Student])
